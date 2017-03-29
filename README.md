@@ -72,6 +72,7 @@ public class IntroActivity extends MaterialIntroActivity
   - ```hideBackButton()``` &#8702; hides any button on the left bottom of screen
   - ```enableLastSlideAlphaExitTransition()``` &#8702; set if the last slide should disapear with alpha hiding effect
   - ```onLastSlidePassed``` &#8702; Override in order to perform some action after passing last slide
+  - ```setMessageButtonBackgroundColor``` &#8702; set custom background color for message button
 
 #### Customizing view animations: 
 

@@ -2,6 +2,7 @@ package agency.tango.materialintroscreen;
 
 import android.animation.ArgbEvaluator;
 import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
@@ -312,6 +313,15 @@ public abstract class MaterialIntroActivity extends AppCompatActivity {
     public void onLastSlidePassed() {
         // This method is intentionally empty, because we didn't want to make this method
         // abstract as it would force user to implement this, even if he wouldn't like to.
+    }
+
+    /**
+     * Set message button background color
+     * @param colorRes Color resource to set
+     */
+    public void setMessageButtonBackgroundColor(@ColorRes int colorRes)
+    {
+        messageButton.getBackground().setColorFilter(getColorFromRes(colorRes), PorterDuff.Mode.SRC_ATOP);
     }
 
     private void initOnPageChangeListeners() {
