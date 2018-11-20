@@ -14,7 +14,7 @@ import android.graphics.RectF;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v4.view.ViewCompat;
-import android.support.v4.view.CustomViewPager;
+import agency.tango.materialintroscreen.widgets.CustomViewPager;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.view.View;

@@ -1,7 +1,7 @@
 package agency.tango.materialintroscreen.widgets;
 
 import android.content.Context;
-import android.support.v4.view.CustomViewPager;
+import agency.tango.materialintroscreen.widgets.CustomViewPager;
 import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.view.KeyEvent;

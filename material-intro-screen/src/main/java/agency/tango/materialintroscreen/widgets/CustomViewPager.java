@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package android.support.v4.view;
+package agency.tango.materialintroscreen.widgets;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -34,6 +34,13 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.os.ParcelableCompat;
 import android.support.v4.os.ParcelableCompatCreatorCallbacks;
+import android.support.v4.view.AbsSavedState;
+import android.support.v4.view.AccessibilityDelegateCompat;
+import android.support.v4.view.MotionEventCompat;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.VelocityTrackerCompat;
+import android.support.v4.view.ViewCompat;
+import android.support.v4.view.WindowInsetsCompat;
 import android.support.v4.view.accessibility.AccessibilityEventCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.support.v4.view.accessibility.AccessibilityRecordCompat;
@@ -506,7 +513,8 @@ public class CustomViewPager extends ViewGroup {
      */
     public void setAdapter(PagerAdapter adapter) {
         if (mAdapter != null) {
-            mAdapter.setViewPagerObserver(null);
+            //mAdapter.setViewPagerObserver(null);
+            mAdapter.unregisterDataSetObserver(mObserver);
             mAdapter.startUpdate(this);
             for (int i = 0; i < mItems.size(); i++) {
                 final ItemInfo ii = mItems.get(i);
@@ -527,7 +535,8 @@ public class CustomViewPager extends ViewGroup {
             if (mObserver == null) {
                 mObserver = new PagerObserver();
             }
-            mAdapter.setViewPagerObserver(mObserver);
+            //mAdapter.setViewPagerObserver(mObserver);
+            mAdapter.registerDataSetObserver(mObserver);
             mPopulatePending = false;
             final boolean wasFirstLayout = mFirstLayout;
             mFirstLayout = true;
@@ -780,7 +789,7 @@ public class CustomViewPager extends ViewGroup {
             if (mSetChildrenDrawingOrderEnabled == null) {
                 try {
                     mSetChildrenDrawingOrderEnabled = ViewGroup.class.getDeclaredMethod(
-                            "setChildrenDrawingOrderEnabled", new Class[] { Boolean.TYPE });
+                            "setChildrenDrawingOrderEnabled", Boolean.TYPE);
                 } catch (NoSuchMethodException e) {
                     Log.e(TAG, "Can't find setChildrenDrawingOrderEnabled", e);
                 }
@@ -1174,7 +1183,7 @@ public class CustomViewPager extends ViewGroup {
                         mAdapter.destroyItem(this, pos, ii.object);
                         if (DEBUG) {
                             Log.i(TAG, "populate() - destroyItem() with pos: " + pos
-                                    + " view: " + ((View) ii.object));
+                                    + " view: " + ii.object);
                         }
                         itemIndex--;
                         curIndex--;
@@ -1208,7 +1217,7 @@ public class CustomViewPager extends ViewGroup {
                             mAdapter.destroyItem(this, pos, ii.object);
                             if (DEBUG) {
                                 Log.i(TAG, "populate() - destroyItem() with pos: " + pos
-                                        + " view: " + ((View) ii.object));
+                                        + " view: " + ii.object);
                             }
                             ii = itemIndex < mItems.size() ? mItems.get(itemIndex) : null;
                         }
@@ -1755,7 +1764,7 @@ public class CustomViewPager extends ViewGroup {
                                 (int) (childWidth * lp.widthFactor),
                                 MeasureSpec.EXACTLY);
                         final int heightSpec = MeasureSpec.makeMeasureSpec(
-                                (int) (height - paddingTop - paddingBottom),
+                                (height - paddingTop - paddingBottom),
                                 MeasureSpec.EXACTLY);
                         child.measure(widthSpec, heightSpec);
                     }
@@ -2755,9 +2764,9 @@ public class CustomViewPager extends ViewGroup {
                     if (Build.VERSION.SDK_INT >= 11) {
                         // The focus finder had a bug handling FOCUS_FORWARD and FOCUS_BACKWARD
                         // before Android 3.0. Ignore the tab key on those devices.
-                        if (KeyEventCompat.hasNoModifiers(event)) {
+                        if (event.hasNoModifiers()) {
                             handled = arrowScroll(FOCUS_FORWARD);
-                        } else if (KeyEventCompat.hasModifiers(event, KeyEvent.META_SHIFT_ON)) {
+                        } else if (event.hasModifiers(KeyEvent.META_SHIFT_ON)) {
                             handled = arrowScroll(FOCUS_BACKWARD);
                         }
                     }
