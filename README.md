@@ -1,13 +1,12 @@
 # Android Material Intro Screen
  [ ![Download](https://api.bintray.com/packages/tangoagency/maven/material-intro-screen/images/download.svg) ](https://bintray.com/tangoagency/maven/material-intro-screen/_latestVersion)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/753f46972d8740d1984f8beb7d04fb9d)](https://www.codacy.com/app/TangoAgency/material-intro-screen?utm_source=github.com&utm_medium=referral&utm_content=TangoAgency/material-intro-screen&utm_campaign=badger)
-[![Build Status](https://travis-ci.org/TangoAgency/material-intro-screen.svg?branch=master)](https://travis-ci.org/TangoAgency/material-intro-screen)
-[![Android Arsenal Material Intro Screen](https://img.shields.io/badge/Android%20Arsenal-Material--Intro--Screen-green.svg?style=true)](http://android-arsenal.com/details/1/4368)
 
 This is a fork of [TangoAgency/material-intro-screen](https://github.com/TangoAgency/material-intro-screen) with the following changes:
 - Support for androidx
 - Updated libraries and target SDK
 - padding fix for long descriptions
+- renamed package from agency.tango. to io.github.dreierf
+- published to maven central
 
 Material intro screen is inspired by [Material Intro] and developed with love from scratch. I decided to rewrite completely almost all features in order to make Android intro screen easy to use for everyone and extensible as possible.
 ## Features
@@ -27,7 +26,7 @@ Material intro screen is inspired by [Material Intro] and developed with love fr
 #### Add gradle dependecy
 ```
 dependencies {
-  compile 'agency.tango.android:material-intro-screen:{latest_release}'
+  compile 'io.github.dreierf:material-intro-screen:0.0.6'
 }
 ```
 ### Step 2:
@@ -110,7 +109,7 @@ getBackButtonTranslationWrapper()
 
 #### And set there the [app:layout_parallaxFactor][ParallaxFactor] attribute:
 ```xml
-<agency.tango.materialintroscreen.parallax.ParallaxLinearLayout
+<io.github.dreierf.materialintroscreen.parallax.ParallaxLinearLayout
 xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
@@ -131,8 +130,6 @@ All features which are not available in simple Slide Fragment are shown here: [C
 To report a specific problem or feature request, [open a new issue on Github](https://github.com/TangoAgency/material-intro-screen/issues/new).
 
 ## Company
- 
-[![Facebook](https://github.com/TangoAgency/material-intro-screen/blob/master/images/facebook.png)](https://www.facebook.com/TangoDigitalAgency)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Twitter](https://github.com/TangoAgency/material-intro-screen/blob/master/images/twitter.png)](https://twitter.com/Tango_Agency)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![LinkedIn](https://github.com/TangoAgency/material-intro-screen/blob/master/images/linkedin.png)](https://www.linkedin.com/company/tango-digital-agency)
 
 [Here](https://github.com/TangoAgency/) you can see open source work developed by Tango Agency.
  
