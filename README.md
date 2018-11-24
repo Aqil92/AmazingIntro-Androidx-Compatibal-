@@ -1,5 +1,5 @@
 # Android Material Intro Screen
- [ ![Download](https://api.bintray.com/packages/tangoagency/maven/material-intro-screen/images/download.svg) ](https://bintray.com/tangoagency/maven/material-intro-screen/_latestVersion)
+ [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.dreierf/material-intro-screen/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.dreierf/material-intro-screen)
 
 This is a fork of [TangoAgency/material-intro-screen](https://github.com/TangoAgency/material-intro-screen) with the following changes:
 - Support for androidx
