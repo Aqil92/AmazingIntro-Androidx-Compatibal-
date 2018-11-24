@@ -11,7 +11,7 @@
     android:background="@android:color/transparent"
     android:orientation="vertical">
 
-    <agency.tango.materialintroscreen.widgets.OverScrollViewPager
+    <io.github.dreierf.materialintroscreen.widgets.OverScrollViewPager
         android:id="@+id/view_pager_slides"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -23,7 +23,7 @@
         android:layout_gravity="bottom"
         android:orientation="vertical"
         android:paddingTop="32dp"
-        app:layout_behavior="agency.tango.materialintroscreen.MoveUpBehaviour">
+        app:layout_behavior="io.github.dreierf.materialintroscreen.MoveUpBehaviour">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_message"
@@ -62,7 +62,7 @@
                 android:src="@drawable/ic_skip"
                 android:visibility="gone" />
 
-            <agency.tango.materialintroscreen.widgets.InkPageIndicator
+            <io.github.dreierf.materialintroscreen.widgets.InkPageIndicator
                 android:id="@+id/indicator"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

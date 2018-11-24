@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<agency.tango.materialintroscreen.parallax.ParallaxLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<io.github.dreierf.materialintroscreen.parallax.ParallaxLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/slide_background"
@@ -52,4 +52,4 @@
             tools:text="Lorem ipsum dolor sit amet, consectetur, adipisci velit, …" />
 
     </LinearLayout>
-</agency.tango.materialintroscreen.parallax.ParallaxLinearLayout>
+</io.github.dreierf.materialintroscreen.parallax.ParallaxLinearLayout>

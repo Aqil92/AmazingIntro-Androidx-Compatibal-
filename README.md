@@ -53,7 +53,7 @@ public class IntroActivity extends MaterialIntroActivity
                 .buttonsColor(R.color.colorAccent)
                 .possiblePermissions(new String[]{Manifest.permission.CALL_PHONE, Manifest.permission.READ_SMS})
                 .neededPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION})
-                .image(agency.tango.materialintroscreen.R.drawable.ic_next)
+                .image(io.github.dreierf.materialintroscreen.R.drawable.ic_next)
                 .title("title 3")
                 .description("Description 3")
                 .build(),

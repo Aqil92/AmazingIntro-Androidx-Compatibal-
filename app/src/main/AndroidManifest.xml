@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="agency.tango.materialintro">
+    package="io.github.dreierf.materialintro">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_SMS" />
@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".SplashActivity"
+            android:name="io.github.dreierf.materialintro.SplashActivity"
             android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,10 +23,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity" />
+        <activity android:name="io.github.dreierf.materialintro.MainActivity" />
 
         <activity
-            android:name=".IntroActivity"
+            android:name="io.github.dreierf.materialintro.IntroActivity"
             android:theme="@style/Theme.Intro" />
 
     </application>
